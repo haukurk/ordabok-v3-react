@@ -6,7 +6,7 @@ import { create } from 'apisauce';
 
 // Create a base for API.
 const api = create({
-  baseURL: 'https://api.com/v1.0/', // Production. TODO: choose TST or PROD based on env.
+  baseURL: 'https://api-ordabok.hauxi.is/api/',
 });
 
 // TODO: Add headers for authentication if authenticated.

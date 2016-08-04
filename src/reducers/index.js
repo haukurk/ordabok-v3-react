@@ -1,15 +1,15 @@
 import { combineReducers } from 'redux';
-import counter from './counter';
-import authentication from './authentication';
 import system from './system';
+import translations from './translations';
+import settings from './settings';
 
 /**
  * Combinator for reducers.
  */
 const rootReducer = combineReducers({
-    counter,
-    authentication,
-    system
+    system,
+    settings,
+    translations
 });
 
 export default rootReducer;

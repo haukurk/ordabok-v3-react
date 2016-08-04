@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 import DocumentMeta from 'react-document-meta';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 /* components */
 import { HomeSection } from 'components/HomeSection';
+
+/* action creators */
+import * as TranslationActions from 'actions/translations';
+import * as SettingsActions from 'actions/settings';
 
 /**
  * Meta data for the Home Route.
@@ -21,6 +27,18 @@ const metaData = {
 };
 
 /**
+ * Decorator to access redux states and utils.
+ */
+@connect(
+    state => ({
+        translations: state.translations,
+        settings: state.settings
+    }),
+    dispatch => bindActionCreators(Object.assign({}, TranslationActions, SettingsActions), dispatch)
+)
+
+
+/**
  * Container for Home Route.
  */
 export class HomeContainer extends Component {
@@ -33,7 +51,7 @@ export class HomeContainer extends Component {
         return (
             <div>
                 <DocumentMeta {...metaData} />
-                <HomeSection />
+                <HomeSection {...this.props} />
             </div>
         );
     }

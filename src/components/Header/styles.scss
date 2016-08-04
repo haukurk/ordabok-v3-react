@@ -1,7 +1,11 @@
 :local(.styles) {
 
-    h2  {
-        color: #fff;
+    h1  {
+        font-weight: 100;
+    }
+
+    .content {
+        margin: 15px;
     }
 
     .logo {
@@ -10,9 +14,19 @@
         }
     }
 
+    .siteTitleHeader {
+        color: #1d2120;
+        font-weight: 300;
+    }
+
+    .siteSubTitleHeader {
+        color: #5a5c51 !important;
+    }
+
     .header
     {
-        margin-top: 25px;
+        margin: 25px;
+
     }
 
 }

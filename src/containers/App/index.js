@@ -15,7 +15,7 @@ import { Footer } from 'components/Footer';
  */
 @connect(
     state => ({
-        system: state.system,
+        system: state.system
     })
 )
 
@@ -47,6 +47,7 @@ export class App extends Component {
                     <content>
                         {this.props.children}
                     </content>
+                    <Footer />
                 </div>
             </div>
         );

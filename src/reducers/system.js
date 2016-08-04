@@ -10,7 +10,7 @@ let initialState = {
  * @param  {Object} action from the action creator
  * @return {Object} reduced state.
  */
-export default function counter(state = initialState, action) {
+export default function system(state = initialState, action) {
     switch (action.type) {
         case Type.REHYDRATED_COMPLETE:
             return Object.assign({}, state, {rehydrated: true});

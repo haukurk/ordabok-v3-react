@@ -11,17 +11,24 @@ export class SearchInput extends Component {
     constructor(props) {
         super(props);
 
+        this._searchForTranslations = _.debounce(this._searchForTranslations,500);
+
         this.state = {
-            value: '',
-            loading: false
+            value: ''
         }
 
     }
 
-    toggleLoadingState() {
-       this.setState({
-           loading: !this.state.loading
-       });
+    _searchForTranslations(search_input) {
+
+        let { GetTranslationsFromAPI } = this.props;
+        if(search_input.length > 1) {
+            GetTranslationsFromAPI(search_input);
+        }
+    }
+
+    SearchInput_OnChange(e) {
+        this._searchForTranslations(e.target.value);
     }
 
     /**
@@ -29,12 +36,16 @@ export class SearchInput extends Component {
      * @return Search Input
      */
     render() {
+
+        // Extract from props
+        let { translations } = this.props;
+
         return (
             <Input
                 icon="search"
                 size="huge"
-                onChange={(evt) => this.setState({ value: evt.target.value, loading: true })}
-                state={this.state.loading ? 'loading' : null}
+                onChange={(evt) => this.SearchInput_OnChange(evt)}
+                state={translations.loading ? "loading" : null}
                 placeholder="Sláðu inn leitarorð. Dæmi: House, Hús, Barn"
                 fluid
                 />

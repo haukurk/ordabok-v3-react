@@ -1,15 +1,15 @@
-// Demo purposes action types
+// API action types
 
-export const INCREMENT_COUNTER = 'INCREMENT_COUNTER';
-export const DECREMENT_COUNTER = 'DECREMENT_COUNTER';
-
-// Authentication action types
+export const SET_OPTION_OPEN_TRANSL_MODAL = 'SET_OPTION_OPEN_TRANSL_MODAL';
 
 // Note that async API calls have REQUEST, ERROR, SUCCESS action types.
-export const REQUEST_LOGIN = 'REQUEST_LOGIN';
-export const ERROR_LOGIN = 'ERROR_LOGIN';
-export const SUCCESS_LOGIN = 'SUCCESS_LOGIN';
-export const FORGET_LOGIN = 'FORGET_LOGIN';
+export const REQUEST_TRANSLATIONS = 'REQUEST_TRANSLATIONS';
+export const ERROR_TRANSLATIONS = 'ERROR_TRANSLATIONS';
+export const SUCCESS_TRANSLATIONS = 'SUCCESS_TRANSLATIONS';
+
+// Translations List
+export const REPLACE_IS_TRANSLATION_LIST = 'REPLACE_IS_TRANSLATION_LIST';
+export const REPLACE_EN_TRANSLATION_LIST = 'REPLACE_EN_TRANSLATION_LIST';
 
 // Rehydrate types
 import { REHYDRATE as ALIAS_RHYDRATE } from 'redux-persist/constants';
