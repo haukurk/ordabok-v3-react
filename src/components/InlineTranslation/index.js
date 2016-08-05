@@ -19,9 +19,12 @@ export class InlineTranslation extends Component {
     render() {
 
         let { translations, settings } = this.props;
+        let { lastTranslation } = translations;
 
         return (
+
             <div className={`${styles}`}>
+                { lastTranslation ?
                 <Message icon>
                     <Icon name="help"/>
                     <Content>
@@ -31,7 +34,9 @@ export class InlineTranslation extends Component {
                         <p>{translations.lastTranslation.translation}</p>
                     </Content>
                 </Message>
+                : '' }
             </div>
+
         );
     }
 }

@@ -38,7 +38,8 @@ export class HomeSection extends Component {
 
                     <div className="ui divider"></div>
 
-                    {(settings.OPEN_WITH_MODAL === false) ?
+                    {(settings.OPEN_WITH_MODAL === false
+                        && translations.lastTranslation != null) ?
                     <div>
                     <InlineTranslation {...this.props} />
 
