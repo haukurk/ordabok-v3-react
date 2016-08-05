@@ -1,8 +1,9 @@
-React Web Application Boilerplate
+Orðabók (dictionary in english)
 =====================
 
-### Technology Stack
+Dictioniary web application created with React+Redux+SemanticUI.
 
+Total stack:
 * [React](https://github.com/facebook/react)
 * [Redux](https://github.com/rackt/redux)
 * [React-Router](https://github.com/rackt/react-router)
@@ -16,15 +17,19 @@ React Web Application Boilerplate
 * [APIsauce](https://github.com/skellock/apisauce)
 * [Reactotron](https://github.com/skellock/reactotron)
 
+![Screenshot](https://raw.githubusercontent.com/haukurk/ordabok-v3-react/dev/docs/screen1.png)
+
+It should be noted that the API providing translations is not included in this repo.
+
 ### Installation
 
 ```
-$ git clone {gitrepo url} {project}
-$ cd {project}
+$ git clone https://github.com/haukurk/ordabok-v3-react.git
+$ cd ordabok-v3-react
 $ npm install
 ```
 
-### Development
+### Development Server
 
 ```
 $ npm run start
@@ -40,7 +45,9 @@ $ npm run reactotron
 open http://localhost:3000
 ```
 
-### Production
+### Production Server
+
+For building for production (better minification and optimization) run the following command:
 
 ```
 $ npm run prod

@@ -18,7 +18,7 @@ export default function configureStore(initialState) {
     const store = finalCreateStore(rootReducer, initialState, autoRehydrate());
 
     persistStore(store, {
-            whitelist: ['counter']
+            whitelist: ['translations','settings']
         }, () => store.dispatch(rehydrationComplete())); // redux-persist.
 
     if (module.hot) {

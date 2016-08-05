@@ -1,0 +1,14 @@
+:local(.styles) {
+
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+
+  .scrollable {
+    width: 100%;
+    _height: expression( this.scrollHeight > 332 ? "333px" : "auto" ); /* sets max-height for IE6 */
+    max-height: 333px; /* sets max-height value for all standards-compliant browsers */
+    overflow-y: scroll;
+  }
+
+}

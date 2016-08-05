@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import GitHubButton from 'react-github-button';
 
-import './styles.scss';
+import { styles } from './styles.scss';
 
 /**
  * General Footer Component
@@ -13,13 +14,14 @@ export class Footer extends Component {
      */
     render() {
         return (
-            <footer className="footer">
-                <div className="container">
-                    <div className="row">
-                        <p className="text-muted">&copy; 2016</p>
-                    </div>
+                <div className={`${styles} ui segment`}>
+
+                    <p>
+                        <GitHubButton type="stargazers" size="small" namespace="haukurk" repo="ordabok-v3-react" />
+                        <b>Haukur, 2016</b> / Frammendi skrifaður með hjálp <b>React</b>+<b>Redux</b>+<b>SemanticUI</b>
+                    </p>
+
                 </div>
-            </footer>
         );
     }
 }

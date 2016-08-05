@@ -1,1 +1,14 @@
 @import '../../../src/containers/App/styles/screens';
+
+:local(.styles) {
+
+  .translation {
+    font-size: 19px !important;
+  }
+
+  .translation:hover {
+    background-color: #f0eceb;
+    cursor: pointer;
+  }
+
+}
