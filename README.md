@@ -47,7 +47,7 @@ open http://localhost:3000
 
 ### Production Server
 
-For running in production (better minification and optimization)
+For building for production (better minification and optimization) run the following command:
 
 ```
 $ npm run prod

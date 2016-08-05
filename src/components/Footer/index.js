@@ -18,7 +18,7 @@ export class Footer extends Component {
 
                     <p>
                         <GitHubButton type="stargazers" size="small" namespace="haukurk" repo="ordabok-v3-react" />
-                        <b>Haukur, 2016</b> / Frammendi búinn til með <b>React</b>+<b>Redux</b>+<b>SemanticUI</b>
+                        <b>Haukur, 2016</b> / Frammendi skrifaður með hjálp <b>React</b>+<b>Redux</b>+<b>SemanticUI</b>
                     </p>
 
                 </div>

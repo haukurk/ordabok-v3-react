@@ -3,6 +3,8 @@ import { styles } from './styles.scss';
 
 import _ from 'lodash';
 
+import { Message, Header, Content, Icon } from 'semantic-react';
+
 import TranslationListItem from '../TranslationListItem';
 
 /**
@@ -35,18 +37,30 @@ export class TranslationList extends Component {
      */
     render() {
 
-        let { translations, lang_code } = this.props;
-
+        let { translations, lang_code, getTranslation, settings } = this.props;
         let filteredTranslations = this._filterTranslations(translations.current,lang_code);
 
         return (
             <div className={`${styles}`}>
+            {filteredTranslations.length > 0 ?
             <div className={`scrollable ui vertical basic buttons`}>
-                {this._filterTranslations(translations.current,lang_code).map(
+                {filteredTranslations.map(
                     (translation, index) => (
-                        <TranslationListItem key={index} translation={translation} />
+                        <TranslationListItem settings={settings} reduxAwarenessMethod={getTranslation} key={index} translation={translation} />
                     ))}
             </div>
+            :
+            <div>
+                <Message icon>
+                    <Content>
+                        <Header>
+                            Engin orð á skrá.
+                        </Header>
+                        <p><Icon color="yellow" name="attention"></Icon>Athugaðu að stórir og litlir stafir skipta máli.</p>
+                    </Content>
+                </Message>
+            </div>
+            }
             </div>
         );
     }

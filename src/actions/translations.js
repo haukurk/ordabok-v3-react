@@ -28,6 +28,14 @@ export function requestingTranslations(search_input) {
 }
 
 /**
+ * Action Creator for when getting a translation
+ * @return {object} action for getting a translation
+ */
+export function getTranslation(translation) {
+  return { type: Type.TRANSLATE_TRANSLATION, translation: translation };
+}
+
+/**
  * Function that sends request to the dictionary Api
  * @param  {string} search input for translaTIONS.
  * @return {promise-ish} apisauce promise-based repsonse.

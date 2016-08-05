@@ -4,6 +4,7 @@ import { styles } from './styles.scss';
 import SearchInput from '../SearchInput';
 import TranslationList from '../TranslationList';
 import InfoBar from '../InfoBar';
+import InlineTranslation from '../InlineTranslation';
 
 /**
  * Home Section
@@ -37,16 +38,24 @@ export class HomeSection extends Component {
 
                     <div className="ui divider"></div>
 
+                    {(settings.OPEN_WITH_MODAL === false) ?
+                    <div>
+                    <InlineTranslation {...this.props} />
+
+                    <div className="ui divider"></div>
+                    </div> : ''
+                    }
+
                     <div className="ui two column doubling stackable grid container">
 
                         <div className="column">
-                            <h1>Íslenska</h1>
-                            <TranslationList translations={translations} lang_code="IS" />
+                            <h2>Íslenska</h2>
+                            <TranslationList {...this.props} lang_code="IS" />
                         </div>
 
                         <div className="column">
-                            <h1>Enska</h1>
-                            <TranslationList translations={translations} lang_code="EN" />
+                            <h2>Enska</h2>
+                            <TranslationList {...this.props} lang_code="EN" />
                         </div>
 
                     </div>

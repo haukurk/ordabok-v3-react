@@ -24,7 +24,7 @@ export class TranslationListItem extends Component {
     }
 
     onClickTranslation() {
-        
+
     }
 
     /**
@@ -34,12 +34,17 @@ export class TranslationListItem extends Component {
     render() {
 
         // Extract from props
-        let { translation } = this.props;
+        let { translation, reduxAwarenessMethod, settings } = this.props;
 
         return (
             <div>
                 <button
-                    onClick={() => this.setState({ active: true })}
+                    onClick={() => {
+                        if(settings.OPEN_WITH_MODAL) {
+                            this.setState({ active: true });
+                        }
+                        reduxAwarenessMethod(translation);
+                    }}
                     className={`${styles} ui button`}>{translation.word}
                 </button>
 
@@ -52,7 +57,7 @@ export class TranslationListItem extends Component {
                         </p>
                     </Content>
                     <Actions>
-                        <Button emphasis="default" onClick={this.onCloseModal.bind(this)}>Ok, done.</Button>
+                        <Button emphasis="default" onClick={this.onCloseModal.bind(this)}>Okey, búin(n)..</Button>
                     </Actions>
                 </Modal>
             </div>

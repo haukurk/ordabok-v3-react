@@ -46,7 +46,7 @@ export class SearchInput extends Component {
                 size="huge"
                 onChange={(evt) => this.SearchInput_OnChange(evt)}
                 state={translations.loading ? "loading" : null}
-                placeholder="Sláðu inn leitarorð. Dæmi: House, Hús, Barn"
+                placeholder="Sláðu inn leitarorð. Dæmi: house, hús, barn eða Iceland"
                 fluid
                 />
         );

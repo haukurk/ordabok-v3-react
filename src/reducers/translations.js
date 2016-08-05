@@ -2,7 +2,8 @@ import * as Type from 'constants/action-types';
 
 let initialState = {
     current: {},
-    lastSearch: null
+    lastSearch: null,
+    lastTranslation: null
 }
 
 /**
@@ -19,6 +20,8 @@ export default function translations(state = initialState, action) {
             return Object.assign({}, state, {loading: false});
         case Type.SUCCESS_TRANSLATIONS:
             return Object.assign({}, state, {loading: false, current: action.payload.data});
+        case Type.TRANSLATE_TRANSLATION:
+            return Object.assign({}, state, {lastTranslation: action.translation});
         case Type.REHYDRATE:
             var incoming = action.payload.translations // redux-persist use payload.
             if (incoming)
